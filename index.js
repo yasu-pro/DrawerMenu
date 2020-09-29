@@ -3,8 +3,11 @@
 const button = document.getElementById("button");
 const drawer = document.getElementById("drawer");
 
+let count = 0;
 let px = 0;
 let firstPx = 0;
+let onOff = true;
+let timeCount = "";
 
 const screen = function screen(moved) {
   drawer.style.left = moved + "px";
@@ -20,61 +23,57 @@ function getCoordinate() {
   px = pageXOffset + x;
 }
 
-button.addEventListener("click", () => {
-  let onOff = true;
-
+function countUp() {
+  count += 50;
   if (onOff == true) {
-    let moved = 0;
+    fadeIn(count);
+  } else if (onOff == false) {
+    fadeOut(count);
+  }
+}
 
+function fadeIn(getcount) {
+  let moved = 0;
+
+  moved = px + getcount;
+  if (moved >= 0) {
+    clearInterval(timeCount);
+    count = 0;
     onOff = false;
-    console.log(onOff);
+  }
+  screen(moved);
+  moved = 0;
+}
 
+function fadeOut(getcount) {
+  let moved = 0;
+
+  moved = px - getcount;
+  if (firstPx >= moved) {
+    clearInterval(timeCount);
+    count = 0;
+    onOff = true;
+  }
+  screen(moved);
+  moved = 0;
+}
+
+button.addEventListener("click", () => {
+  if (onOff == true) {
     getCoordinate();
+
     firstPx = px;
 
-    let count = 0;
-    function countUp() {
-      count = count + 50;
-      fadeIn();
-    }
-
-    function fadeIn() {
-      moved = px + count;
-      if (moved >= 0) {
-        clearInterval(timeCount);
-        button.disabled = false;
-      }
-      screen(moved);
-    }
-
-    const timeCount = setInterval(() => {
-      countUp();
-    }, 1);
+    countUp();
+    button.disabled = false;
   } else if (onOff == false) {
-    onOff = true;
-
-    let moved = 0;
-    console.log("true");
-
     getCoordinate();
 
-    let count = 0;
-    function countUp() {
-      count = count + 50;
-      fadeOut();
-    }
-
-    function fadeOut() {
-      moved = px + count;
-      if (firstPx <= moved) {
-        clearInterval(timeCount);
-        button.disabled = false;
-      }
-      screen(moved);
-    }
-
-    const timeCount = setInterval(() => {
-      countUp();
-    }, 1);
+    countUp();
+    button.disabled = false;
   }
+
+  timeCount = setInterval(() => {
+    countUp();
+  }, 1);
 });
