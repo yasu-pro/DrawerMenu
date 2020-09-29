@@ -1,0 +1,42 @@
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+html {
+  /* 1em:10px　計算 */
+  font-size: 62.5%;
+}
+
+body {
+}
+
+.button__area {
+  margin-top: 100px;
+  text-align: center;
+}
+
+.drawer {
+  position: absolute;
+  top: 0;
+  left: -500px;
+  width: 500px;
+  height: 100vh;
+  background-color: bisque;
+}
+
+.drawer__list {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.drawer__item {
+  font-size: 3rem;
+}
+
+.drawer__item {
+  border-bottom: black solid 1px;
+}
