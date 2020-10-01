@@ -3,7 +3,7 @@
 const button = document.getElementById("button");
 const drawer = document.getElementById("drawer");
 
-let count = 0;
+let movingDistance = 0;
 let loadDrawerPx = 0;
 let firstPx = 0;
 let isSlid = true;
@@ -24,11 +24,11 @@ function getCoordinate() {
 }
 
 function countUp() {
-  count += 50;
+  movingDistance += 50;
   if (isSlid == true) {
-    fadeIn(count);
+    fadeIn(movingDistance);
   } else {
-    fadeOut(count);
+    fadeOut(movingDistance);
   }
 }
 
@@ -38,7 +38,7 @@ function fadeIn(getcount) {
   toMove = loadDrawerPx + getcount;
   if (toMove >= 0) {
     clearInterval(timeCount);
-    count = 0;
+    movingDistance = 0;
     isSlid = false;
   }
   screen(toMove);
@@ -51,7 +51,7 @@ function fadeOut(getcount) {
   toMove = loadDrawerPx - getcount;
   if (firstPx >= toMove) {
     clearInterval(timeCount);
-    count = 0;
+    movingDistance = 0;
     isSlid = true;
   }
   screen(toMove);
