@@ -4,7 +4,7 @@ const button = document.getElementById("button");
 const drawer = document.getElementById("drawer");
 
 let count = 0;
-let fetchDrawerPx = 0;
+let loadDrawerPx = 0;
 let firstPx = 0;
 let onOff = true;
 let timeCount = 0;
@@ -20,7 +20,7 @@ function getCoordinate() {
   //画面の左端から要素の左端までの距離
   const x = clientRect.left;
   //xの値はスクロール量によって変わってしまうので、スクロール量を追加
-  fetchDrawerPx = pageXOffset + x;
+  loadDrawerPx = pageXOffset + x;
 }
 
 function countUp() {
@@ -35,7 +35,7 @@ function countUp() {
 function fadeIn(getcount) {
   let moved = 0;
 
-  moved = fetchDrawerPx + getcount;
+  moved = loadDrawerPx + getcount;
   if (moved >= 0) {
     clearInterval(timeCount);
     count = 0;
@@ -48,7 +48,7 @@ function fadeIn(getcount) {
 function fadeOut(getcount) {
   let moved = 0;
 
-  moved = fetchDrawerPx - getcount;
+  moved = loadDrawerPx - getcount;
   if (firstPx >= moved) {
     clearInterval(timeCount);
     count = 0;
@@ -64,7 +64,7 @@ button.addEventListener("click", () => {
   if (onOff == true) {
     getCoordinate();
 
-    firstPx = fetchDrawerPx;
+    firstPx = loadDrawerPx;
 
     countUp();
     button.disabled = false;
