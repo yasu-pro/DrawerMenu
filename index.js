@@ -27,7 +27,7 @@ function countUp() {
   count += 50;
   if (onOff == true) {
     fadeIn(count);
-  } else if (onOff == false) {
+  } else {
     fadeOut(count);
   }
 }
@@ -68,7 +68,7 @@ button.addEventListener("click", () => {
 
     countUp();
     button.disabled = false;
-  } else if (onOff == false) {
+  } else {
     getCoordinate();
 
     countUp();
