@@ -59,7 +59,7 @@ function fadeOut(getcount) {
 }
 
 button.addEventListener("click", () => {
-  let slideSpeed = 1;
+  let millisecond = 1;
 
   if (isSlid == true) {
     getCoordinate();
@@ -77,5 +77,5 @@ button.addEventListener("click", () => {
 
   timeCount = setInterval(() => {
     countUp();
-  }, slideSpeed);
+  }, millisecond);
 });
