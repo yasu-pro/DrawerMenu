@@ -32,10 +32,10 @@ function countUp() {
   }
 }
 
-function fadeIn(getcount) {
+function fadeIn(movedDistance) {
   let toMove = 0;
 
-  toMove = loadDrawerPx + getcount;
+  toMove = loadDrawerPx + movedDistance;
   if (toMove >= 0) {
     clearInterval(timeCount);
     movingDistance = 0;
@@ -45,10 +45,10 @@ function fadeIn(getcount) {
   toMove = 0;
 }
 
-function fadeOut(getcount) {
+function fadeOut(movedDistance) {
   let toMove = 0;
 
-  toMove = loadDrawerPx - getcount;
+  toMove = loadDrawerPx - movedDistance;
   if (firstPx >= toMove) {
     clearInterval(timeCount);
     movingDistance = 0;
