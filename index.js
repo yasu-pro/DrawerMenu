@@ -9,8 +9,8 @@ let firstPx = 0;
 let isSlid = true;
 let timeCount = 0;
 
-const screen = function screen(toMove) {
-  drawer.style.left = toMove + "px";
+const screen = function screen(newDrawerPx) {
+  drawer.style.left = newDrawerPx + "px";
 };
 
 function getCoordinate() {
@@ -33,29 +33,29 @@ function countUp() {
 }
 
 function fadeIn(movedDistance) {
-  let toMove = 0;
+  let newDrawerPx = 0;
 
-  toMove = loadDrawerPx + movedDistance;
-  if (toMove >= 0) {
+  newDrawerPx = loadDrawerPx + movedDistance;
+  if (newDrawerPx >= 0) {
     clearInterval(timeCount);
     movingDistance = 0;
     isSlid = false;
   }
-  screen(toMove);
-  toMove = 0;
+  screen(newDrawerPx);
+  newDrawerPx = 0;
 }
 
 function fadeOut(movedDistance) {
-  let toMove = 0;
+  let newDrawerPx = 0;
 
-  toMove = loadDrawerPx - movedDistance;
-  if (firstPx >= toMove) {
+  newDrawerPx = loadDrawerPx - movedDistance;
+  if (firstPx >= newDrawerPx) {
     clearInterval(timeCount);
     movingDistance = 0;
     isSlid = true;
   }
-  screen(toMove);
-  toMove = 0;
+  screen(newDrawerPx);
+  newDrawerPx = 0;
 }
 
 button.addEventListener("click", () => {
