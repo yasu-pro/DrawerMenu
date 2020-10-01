@@ -6,7 +6,7 @@ const drawer = document.getElementById("drawer");
 let count = 0;
 let loadDrawerPx = 0;
 let firstPx = 0;
-let onOff = true;
+let isSlid = true;
 let timeCount = 0;
 
 const screen = function screen(moved) {
@@ -25,7 +25,7 @@ function getCoordinate() {
 
 function countUp() {
   count += 50;
-  if (onOff == true) {
+  if (isSlid == true) {
     fadeIn(count);
   } else {
     fadeOut(count);
@@ -39,7 +39,7 @@ function fadeIn(getcount) {
   if (moved >= 0) {
     clearInterval(timeCount);
     count = 0;
-    onOff = false;
+    isSlid = false;
   }
   screen(moved);
   moved = 0;
@@ -52,7 +52,7 @@ function fadeOut(getcount) {
   if (firstPx >= moved) {
     clearInterval(timeCount);
     count = 0;
-    onOff = true;
+    isSlid = true;
   }
   screen(moved);
   moved = 0;
@@ -61,7 +61,7 @@ function fadeOut(getcount) {
 button.addEventListener("click", () => {
   let slideSpeed = 1;
 
-  if (onOff == true) {
+  if (isSlid == true) {
     getCoordinate();
 
     firstPx = loadDrawerPx;
