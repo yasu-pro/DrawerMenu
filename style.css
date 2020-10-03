@@ -17,9 +17,8 @@ html {
 .drawer {
   position: absolute;
   top: 0;
-  left: -500px;
-  width: 500px;
-  height: 100vh;
+  left: -999px;
+  width: 35%;
   background-color: bisque;
 }
 
@@ -31,7 +30,7 @@ html {
 }
 
 .drawer__item {
-  font-size: 3rem;
+  font-size: 2rem;
 }
 
 .drawer__item {
