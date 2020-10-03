@@ -42,6 +42,7 @@ function fadeIn(movedDistance) {
     isSlid = false;
   }
   screen(newDrawerPx);
+  console.log(newDrawerPx);
   newDrawerPx = 0;
 }
 

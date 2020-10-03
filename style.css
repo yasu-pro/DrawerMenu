@@ -20,7 +20,7 @@ html {
 .drawer__menu {
   position: absolute;
   top: 0;
-  left: -999px;
+  left: -1000px;
   width: 35%;
   background-color: bisque;
 }
