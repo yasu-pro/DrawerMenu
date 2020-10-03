@@ -9,12 +9,15 @@ html {
   font-size: 62.5%;
 }
 
-.button {
+.drawer {
   margin-top: 100px;
+}
+
+.drawer__buttonArea {
   text-align: center;
 }
 
-.drawer {
+.drawer__menu {
   position: absolute;
   top: 0;
   left: -999px;

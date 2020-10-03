@@ -1,7 +1,7 @@
 "use strict";
 
-const button = document.getElementById("button");
-const drawer = document.getElementById("drawer");
+const button = document.getElementById("drawer__button");
+const drawer = document.getElementById("drawer__menu");
 
 let movingDistance = 0;
 let loadDrawerPx = 0;
