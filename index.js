@@ -3,7 +3,7 @@
 const button = document.getElementById("drawer__button");
 const drawer = document.getElementById("drawer__menu");
 
-let isSlid = true;
+let isSlide = true;
 let client_w = 0;
 
 window.addEventListener("load", () => {
@@ -23,12 +23,12 @@ drawer.addEventListener("resize", () => {
 button.addEventListener("click", () => {
   let clientReact = drawer.getBoundingClientRect();
   let x = clientReact.left;
-  if (isSlid === true) {
+  if (isSlide === true) {
     drawer.style.left = x + client_w + "px";
-    isSlid = false;
+    isSlide = false;
     console.log(client_w + "px");
   } else {
     drawer.style.left = x - client_w + "px";
-    isSlid = true;
+    isSlide = true;
   }
 });
