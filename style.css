@@ -1,0 +1,39 @@
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+.drawer {
+  text-align: center;
+  margin-top: 100px;
+}
+
+.drawer__buttonArea {
+  display: inline-block;
+}
+
+.drawer__menu {
+  text-align: left;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 45%;
+  background-color: bisque;
+}
+
+.drawer__list {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.drawer__item {
+  font-size: 2rem;
+  border-bottom: black solid 1px;
+}
