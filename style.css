@@ -35,8 +35,5 @@ html {
 
 .drawer__item {
   font-size: 2rem;
-}
-
-.drawer__item {
   border-bottom: black solid 1px;
 }
